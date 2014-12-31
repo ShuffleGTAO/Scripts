@@ -1,6 +1,6 @@
 ﻿local function searchVehFromID ( id )
 	for _,v in ipairs ( getElementsByType ( "vehicle" ) ) do
-		if getElementData ( v, "id" ) == tonumber ( id ) then
+		if getElementData ( v, "id-pojazdu" ) == tonumber ( id ) then
 			return v
 		end
 	end
@@ -17,7 +17,7 @@ end
 
 local function sendOffer ( gracz, pojazd, plr )
 	name = getVehicleName ( pojazd )
-	id = getElementData ( pojazd, "id" ) or "Brak"
+	id = getElementData ( pojazd, "id-pojazdu" ) or "Brak"
 	setElementData ( gracz, "Oferta", true )
 	setElementData ( gracz, "Pojazd", name )
 	setElementData ( gracz, "ID", id )
