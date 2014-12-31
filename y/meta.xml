@@ -1,4 +1,3 @@
 <meta>
 <script src="server.lua" type="server"/>
-<file src="zapis.xml"/>
 </meta>
