@@ -1,4 +1,11 @@
-﻿local function searchVehFromID ( id )
+﻿--Copyright by Shuffle--
+--gtao.pl--
+--OwnPlay RPG/RP--
+
+
+
+
+local function searchVehFromID ( id )
 	for _,v in ipairs ( getElementsByType ( "vehicle" ) ) do
 		if getElementData ( v, "id" ) == tonumber ( id ) then
 			return v

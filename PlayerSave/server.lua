@@ -1,4 +1,12 @@
-﻿Player = {}
+﻿--Copyright by Shuffle--
+--gtao.pl--
+--OwnPlay RPG/RP--
+
+
+
+
+
+Player = {}
 
 addEventHandler ( "onPlayerQuit", root, function ()
 	PlayerSaved = source

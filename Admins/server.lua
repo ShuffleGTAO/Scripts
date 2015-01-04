@@ -1,4 +1,11 @@
-﻿addCommandHandler ( "admins", function ( plr, cmd )
+﻿--Copyright by Shuffle--
+--gtao.pl--
+--OwnPlay RPG/RP--
+
+
+
+
+addCommandHandler ( "admins", function ( plr, cmd )
 	admini = {}
 	support = {}
 	super = {}

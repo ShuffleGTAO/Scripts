@@ -1,4 +1,11 @@
-﻿function naliczCzas ()
+﻿--Copyright by Shuffle--
+--gtao.pl--
+--OwnPlay RPG/RP--
+
+
+
+
+function naliczCzas ()
 	for _,v in ipairs ( getElementsByType ( "player" ) ) do
 		konto = getPlayerAccount ( v )
 		h = getAccountData ( konto, "h" ) 

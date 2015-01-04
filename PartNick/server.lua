@@ -1,4 +1,11 @@
-﻿function partNick ( plr, txt )
+﻿--Copyright by Shuffle--
+--gtao.pl--
+--OwnPlay RPG/RP--
+
+
+
+
+function partNick ( plr, txt )
 	osoby = {}
 	gracz = txt and txt:gsub("#%x%x%x%x%x%x", ""):lower() or nil
 	for _,v in ipairs ( getElementsByType ( "player" ) ) do
