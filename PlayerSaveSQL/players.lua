@@ -1,7 +1,8 @@
 ﻿local polaczenie = dbConnect ( "sqlite", "db.db" )
 
-addCommandHandler ( "player", function ( plr )
+addEventHandler ( "onPlayerQuit", root, function ()
 	if polaczenie then
+		plr = source
 		konto = getPlayerAccount ( plr )
 		dbExec ( polaczenie, "CREATE TABLE IF NOT EXISTS OP_Players ( login VARCHAR, skin INTEGER, portfel INTEGER, interior INTEGER, dimension INTEGER, punkty INTEGER, posx FLOAT, posy FLOAT, posz FLOAT )" )
 		local zapytanie = dbQuery ( polaczenie, "SELECT login FROM OP_Players WHERE login = ?", getPlayerName ( plr ) )
@@ -17,8 +18,9 @@ addCommandHandler ( "player", function ( plr )
 	end
 end)
 
-addCommandHandler ( "wczytaj", function ( plr )
+addEventHandler ( "onPlayerLogin", root, function ( _, konto )
 	if polaczenie then
+		plr = source
 		local zapis = dbQuery ( polaczenie, "SELECT * FROM OP_Players WHERE login = ?", getPlayerName ( plr ) )
 		local result = dbPoll ( zapis, -1 )
 		dbFree ( zapis )
@@ -31,7 +33,7 @@ addCommandHandler ( "wczytaj", function ( plr )
 			setElementInterior ( plr, v.interior )
 			setElementDimension ( plr, v.dimension )
 			setElementModel ( plr, v.skin )
-			setAccountData ( getPlayerAccount ( plr ), "punkty", v.punkty )
+			setAccountData ( konto, "punkty", v.punkty )
 		end
 	end
 end)
