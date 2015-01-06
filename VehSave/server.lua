@@ -18,6 +18,7 @@ end)
 
 
 addCommandHandler ( "zapisz", function ( plr )
+	dbQuery ( conn, "DELETE FROM OP_Vehicles" )
 	for _,v in ipairs ( getElementsByType ( "vehicle" ) ) do
 		local pojazdID = getElementModel ( v )
 		local c1,c2,c3,c4 = getVehicleColor ( v )
