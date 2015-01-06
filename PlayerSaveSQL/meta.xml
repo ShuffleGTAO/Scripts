@@ -1,0 +1,4 @@
+<meta>
+<script src="players.lua" type="server"/>
+<file src="db.db"/>
+</meta>
