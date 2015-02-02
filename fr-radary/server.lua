@@ -1,7 +1,7 @@
-﻿local dbname = "db_9591"
-local host = "sql-waw1.ServerProject.pl"
-local username = "db_9591"
-local pass = "aeb09ff1464d"
+﻿local dbname = "dbname"
+local host = "host"
+local username = "username"
+local pass = "pass"
 
 liczba = 0
 
