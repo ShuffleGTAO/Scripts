@@ -1,4 +1,9 @@
-﻿local dbname = "dbname"
+﻿--Copyright by Shuffle--
+--gtao.pl--
+--OwnPlay RPG/RP--
+
+
+local dbname = "dbname"
 local host = "host"
 local username = "username"
 local pass = "pass"
