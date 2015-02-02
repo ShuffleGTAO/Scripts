@@ -12,7 +12,7 @@ addEventHandler ( "onResourceStart", resourceRoot, function ()
 	local w = dbPoll ( q, -1 )
 	dbFree ( q )
 	for k,v in ipairs ( w ) do
-		marker = createMarker ( v.x, v.y, v.z-1, "cylinder", 6, 255, 255, 255 )
+		marker = createMarker ( v.x, v.y, v.z-1, "cylinder", 6, 255, 255, 255, 0 )
 		setElementData ( marker, "predkosc", v.predkosc )
 		liczba = k
 	end
