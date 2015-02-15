@@ -111,5 +111,6 @@ function acceptSkin ()
 		guiSetVisible ( arrow[k], false )
 	end
 	outputChatBox ( "Shuffle życzy miłej gry!", 255, 255, 255 )
+	unbindKey ( "ENTER", "DOWN", acceptSkin )
 end
 	
