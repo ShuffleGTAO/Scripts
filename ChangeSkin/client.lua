@@ -99,7 +99,7 @@ end)
 
 
 function acceptSkin ()
-	setElementModel ( localPlayer, getElementModel ( ped ) )
+	triggerServerEvent ( "ChangeSkin", localPlayer, getElementModel ( ped ) )
 	destroyElement ( ped )
 	fadeCamera ( false )
 	setTimer ( fadeCamera, 2000, 1, true )
