@@ -1,0 +1,9 @@
+<meta>
+	
+	<!-- SERVER SIDE -->
+	<script src="server.lua" type="server" />
+
+	<!-- CLIENT SIDE -->
+	<script src="client.lua" type="client" />
+	<export function="openSpawn" type="client"/>
+</meta>
