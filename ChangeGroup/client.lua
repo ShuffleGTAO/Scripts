@@ -19,6 +19,18 @@ local r,g,b = groups[1][3], groups[1][4], groups[1][5]
 local id = groups[1][6]
 local ilosc = groups[1][7]
 
+local policja = {
+{ x,y,z },
+}
+
+local gang = {
+{ x,y,z },
+}
+
+local administracja = {
+{ x,y,z },
+}
+
 for k,_ in ipairs ( groups ) do
 	triggerServerEvent ( "C:Teams", localPlayer, groups[k][1], groups[k][3], groups[k][4], groups[k][5] )
 end
@@ -102,6 +114,9 @@ function acceptSett ()
 	showChat ( true )
 	showPlayerHudComponent ( "all", true )
 	setCameraTarget ( localPlayer, localPlayer )
-	triggerServerEvent ( "C:ChangeSkin", localPlayer, skin, grupa, r, g, b, id, ilosc )
+	local rnd = math.random ( 1, #cords )
+	local name = string.lower ( grupa )
+	local x,y,z = name[rnd][1], name[rnd][2], name[rnd][3]
+	triggerServerEvent ( "C:ChangeSkin", localPlayer, skin, grupa, r, g, b, id, ilosc, x, y, z )
 	unbindKey ( "ENTER", "DOWN", acceptSett )
 end
