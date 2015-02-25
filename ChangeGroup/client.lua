@@ -6,9 +6,9 @@ button = {}
 
 
 local groups = {
-{ "Policja", 10, 0, 0, 255 },
-{ "Gang", 5, 255, 255, 255 },
-{ "Administracja", 3, 255, 0, 0 },
+{ "Policja", 10, 0, 0, 255, id, ilosc naboi },
+{ "Gang", 5, 255, 255, 255, id, ilosc naboi },
+{ "Administracja", 3, 255, 0, 0, id, ilosc naboi },
 }
 
 local skins = {}
@@ -16,6 +16,8 @@ local skins = {}
 local grupa = groups[1][1]
 local max = groups[1][2]
 local r,g,b = groups[1][3], groups[1][4], groups[1][5]
+local id = groups[1][6]
+local ilosc = groups[1][7]
 
 for k,_ in ipairs ( groups ) do
 	triggerServerEvent ( "C:Teams", localPlayer, groups[k][1], groups[k][3], groups[k][4], groups[k][5] )
@@ -50,6 +52,8 @@ addEventHandler ( "onClientGUIClick", root, function ()
 		grupa = groups[count][1]
 		max = groups[count][2]
 		r,g,b = groups[count][3], groups[count][4], groups[count][5]
+		local id = groups[count][6]
+		local ilosc = groups[count][7]
 		guiSetText ( button[1], "Następna\ngrupa\nMax osób : "..max.."" )
 	elseif source == button[2] then
 		if number == #skins then
@@ -98,6 +102,6 @@ function acceptSett ()
 	showChat ( true )
 	showPlayerHudComponent ( "all", true )
 	setCameraTarget ( localPlayer, localPlayer )
-	triggerServerEvent ( "C:ChangeSkin", localPlayer, skin, grupa, r, g, b )
+	triggerServerEvent ( "C:ChangeSkin", localPlayer, skin, grupa, r, g, b, id, ilosc )
 	unbindKey ( "ENTER", "DOWN", acceptSett )
 end
