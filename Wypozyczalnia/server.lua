@@ -27,9 +27,9 @@ addEventHandler("onPlayerVehicleExit",root,function(veh,seat)
 		timer[veh]={}
 		for i=1,#bikes do
 			if veh==bike[i] then
-				outputChatBox("*Wyszedłeś(aś) z roweru należącego do wypożyczalni. Masz 5 sekund żeby na niego wrócić inaczej zostanie zrespiony na miejsce zaparkowania i zostanie pobrana opłata w wysokości 5 $",source,255,255,255)
-				timer[veh][1],timer[veh][2]=setTimer(respawnVehicle,5000,1,veh)
-				timer[veh][2]=setTimer(takePlayerMoney,5000,1,source,5)
+				outputChatBox("*Wyszedłeś(aś) z roweru należącego do wypożyczalni. Masz 15 sekund żeby na niego wrócić inaczej zostanie zrespiony na miejsce zaparkowania i zostanie pobrana opłata w wysokości 5 $",source,255,255,255)
+				timer[veh][1],timer[veh][2]=setTimer(respawnVehicle,15000,1,veh)
+				timer[veh][2]=setTimer(takePlayerMoney,15000,1,source,5)
 			end
 		end
 	end
